@@ -1,0 +1,71 @@
+/* Stylesheet for the Kindle / EPUB edition of
+   "Yeshua: Jesus Without Christianity" */
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  margin: 0 5%;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+h1 {
+  font-size: 1.8em;
+  line-height: 1.2;
+  margin: 2em 0 1em 0;
+  text-align: left;
+  page-break-before: always;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.25em;
+  line-height: 1.25;
+  margin: 1.6em 0 0.6em 0;
+  text-align: left;
+  font-weight: bold;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+p {
+  margin: 0;
+  text-indent: 1.3em;
+}
+
+/* First paragraph after a heading: no indent */
+h1 + p, h2 + p, hr + p, blockquote + p {
+  text-indent: 0;
+}
+
+blockquote {
+  margin: 1em 1.5em;
+  font-style: italic;
+  text-align: left;
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+/* Title page */
+.title-page {
+  text-align: center;
+  margin-top: 25%;
+}
+.title-page p { text-indent: 0; text-align: center; }
+
+/* Copyright page */
+.copyright-page {
+  font-size: 0.85em;
+  text-align: left;
+}
+.copyright-page p { text-indent: 0; margin: 0.6em 0; }
+
+/* Section break */
+hr {
+  border: none;
+  text-align: center;
+  margin: 1.4em 0;
+}
+hr:after { content: "\2042"; font-size: 1.2em; }
