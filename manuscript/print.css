@@ -1,0 +1,95 @@
+/* Print stylesheet for the PDF edition (6x9" book trim) */
+
+@page {
+  size: 6in 9in;
+  margin: 0.75in 0.7in 0.8in 0.7in;
+  @bottom-center {
+    content: counter(page);
+    font-family: Georgia, serif;
+    font-size: 9pt;
+    color: #333;
+  }
+  @top-center {
+    content: string(chaptitle);
+    font-family: Georgia, serif;
+    font-size: 8.5pt;
+    font-style: italic;
+    color: #555;
+  }
+}
+
+/* No header/number on the first page of each chapter and front pages */
+@page :first { @top-center { content: none; } @bottom-center { content: none; } }
+@page chapter:first { @top-center { content: none; } }
+
+html { font-family: Georgia, "Times New Roman", serif; }
+body {
+  font-size: 11pt;
+  line-height: 1.42;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Title page */
+#title-block-header {
+  page-break-after: always;
+  text-align: center;
+  padding-top: 2.2in;
+}
+#title-block-header .title {
+  page-break-before: avoid;
+  text-align: center;
+  font-size: 38pt;
+  line-height: 1.1;
+  margin: 0 0 0.3in 0;
+  border: none;
+}
+#title-block-header .subtitle {
+  font-size: 15pt;
+  font-style: italic;
+  color: #444;
+  margin: 0 0 1.6in 0;
+}
+#title-block-header .author {
+  font-size: 14pt;
+  letter-spacing: 0.05em;
+  margin: 0.2in 0 0 0;
+}
+#title-block-header .date { font-size: 11pt; color: #555; }
+
+h1 {
+  string-set: chaptitle content();
+  page-break-before: always;
+  font-size: 21pt;
+  line-height: 1.15;
+  margin: 1.2in 0 0.5in 0;
+  text-align: left;
+  font-weight: bold;
+}
+h2 {
+  font-size: 13pt;
+  margin: 1.3em 0 0.4em 0;
+  text-align: left;
+  font-weight: bold;
+  hyphens: none;
+  page-break-after: avoid;
+}
+
+p { margin: 0; text-indent: 1.3em; orphans: 2; widows: 2; }
+h1 + p, h2 + p, hr + p, blockquote + p { text-indent: 0; }
+
+blockquote { margin: 0.8em 1.4em; font-style: italic; text-align: left; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+/* Title page */
+h1.title { page-break-before: avoid; }
+
+/* Table of contents */
+#TOC { page-break-after: always; }
+#TOC > ul { list-style: none; padding-left: 0; }
+#TOC ul ul { list-style: none; padding-left: 1.2em; font-size: 0.92em; }
+#TOC li { margin: 0.18em 0; }
+#TOC a { text-decoration: none; color: #000; }
+#TOC a::after { content: leader('.') target-counter(attr(href), page); color: #444; }
+#TOC > ul > li > a { font-weight: bold; }

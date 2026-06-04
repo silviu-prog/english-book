@@ -11,6 +11,7 @@ prepared for publication on Amazon Kindle (KDP).
 | File | Use |
 |------|-----|
 | `Yeshua-Jesus-Without-Christianity.epub` | **Primary** upload to KDP (reflowable eBook) |
+| `Yeshua-Jesus-Without-Christianity.pdf` | Print-ready interior (6 × 9″, 399 pp.) for a KDP paperback |
 | `Yeshua-Jesus-Without-Christianity.docx` | Alternative manuscript format KDP also accepts |
 | `cover.jpg` | eBook cover (1600 × 2560 px, KDP-compliant) |
 
